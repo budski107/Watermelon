@@ -13,7 +13,7 @@ class searchDAO {
              ON tbl_ad_category.ad_category_id = tbl_advertisement.ad_category_id 
              WHERE ad_title LIKE '%" . $searchTerm . "%' 
              OR ad_category LIKE '%".$searchTerm."%' ";
-               
+             //test comments  
        $rows = $con->query($sql);
        return $rows;
     }
