@@ -1,0 +1,354 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}	
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    text-decoration: none;
+    color: #575757;
+}
+a:hover{
+    text-decoration: none;
+    color: #00a8ff; 
+}
+/* - - - - - - - - - end reset - - - - - - - - - */
+
+
+
+
+/*------------------Global CSS------------------ */
+
+h1{
+    margin:10px;
+}
+
+
+/*-------------Global CSS ends here------------ */
+body{    
+    font-family: sans-serif;
+    background-color: #fcfcfc;
+}
+#container{
+    padding: 10px;
+    width:80%;
+    height: auto;
+    margin: 0px auto;
+    background-color: #f0f0f0;
+}
+#header{
+    width:100%;
+    height: auto;
+}
+#logo{
+    background-image:url('../images/logo.png');
+    background-size: 100%;
+    padding: 15px;
+    background-repeat: no-repeat;
+    float: left;   
+    width: 200px;
+    height: 100px;
+    max-width: 90%;
+}
+#logo:hover{
+    background-image:url('../images/logo-hover.png');
+    background-size: 100%;
+    padding: 15px;
+    background-repeat: no-repeat;
+    float: left;   
+    width: 200px;
+    height: 100px;
+    max-width: 90%;
+}
+#top-right-nav{
+    float: right;
+    margin-top: 10px;        
+}
+#top-right-nav li{
+    display: inline;
+    text-decoration: none;
+}
+#main-nav{
+    clear: right;
+    float: right;    
+    margin-top: 10px;
+}
+#main-nav li{
+    display: inline;
+    margin-left: 15px;
+    font-size: 15px;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+#find-us{
+    clear: right; 
+    float:right;    
+    margin-top: 10px;
+}
+#find-us li{
+    display:inline;
+}
+
+
+#search-bar-home{ 
+    color:#00a8ff;
+    clear: both;
+    margin:0 auto;
+    width:90%;
+    padding: 15px;
+    background-color: #575757;
+}
+
+#category{
+    width:300px;
+}
+.input-elements{
+    width: 235px;
+    max-width: 235px;
+}
+
+/* MAIN SECTION starts Here --Gary ---- Starts Here */
+
+#main{
+    width:100%;
+    background:#f0f0f0;    
+}
+#lbar{
+    float:left;
+    width:65%;
+    padding:5px;
+    text-align: justify;
+    line-height: 1.7;
+}
+#rbar{
+    float:right;
+    width:30%;
+    padding:5px;
+    text-align: justify;
+    line-height: 1.7;
+}
+.table{
+    float:left;
+    line-height: 2.2;   
+    color: #575757;
+}
+.userProfile{
+    float:left;
+    line-height: 1.5; 
+    padding: 15px;
+    letter-spacing: 3px;
+    color: #575757;
+    text-align: center;
+    font-size: 14pt;
+}
+.accMenu{
+    float: left;
+    font-size: 16pt;
+    line-height: 1.9;
+}
+.accMenu td{
+    padding: 15px;
+    background-color: #D4D4FF;
+    text-align: center;
+    border-bottom: #f0f0f0 thick solid;
+}
+.accMenu td:hover{
+    font-size: 16pt;
+    padding: 15px;
+    background-color: #73B7FB;
+    text-align: center;
+    color: black;
+    border-bottom: #f0f0f0 thick solid;
+}
+.button{
+    border: none;
+    font-size: 16pt;
+    display: inline;
+    margin: 0em;
+    padding: 0em;
+    outline: none;
+    outline-offset: 0em;
+    /* Look like a link */
+    background: none;
+    cursor: pointer;
+}
+.anchor{
+    padding: 15px;
+}
+
+/* MAIN SECTION starts Here --Gary ---- Ends Here */
+
+
+
+
+
+
+/* FOOTER Section By Pratik ---- Starts Here */
+
+#footer{
+    clear: both;
+    padding-top: 20px;
+    border-top: 1px solid black;    
+    bottom:0;
+    width:100%;
+    background:#f0f0f0;
+    font-size: 12px;
+}
+#footer ul{
+    padding:15px 0px 0px 0px;
+    margin:0px;
+}
+
+#footer li{
+    list-style-type: none;
+    min-height:20px;
+    display:block;
+    padding:0px;
+    border-right:none;
+    color:#464646;
+}
+.ftr_title{
+    font-weight:bold;
+    color: Black;
+    font-size: 14px;
+}
+#tble_ftr img{
+    max-width: 20px;
+}
+#tble_ftr{
+    margin-left: 20px;
+    width: 100%;
+}
+#copy_right{
+    border-top:1px black solid;
+}
+#copy_right p:first-child{
+    float:left;
+}
+#copy_right p:last-child{
+    float:right;
+}
+
+/* FOOTER Section By Pratik ---- Ends Here */
+
+/*---------- FAQ Section ----Colin ----Starts Here */
+
+
+#faq{
+    float:left;
+    width:100%;
+    padding:5px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+#data
+{
+border:solid 1px #000000;
+padding:25px;
+width:60%;
+}
+
+.datacell, .datahead {
+    border: 1px dashed black;
+    padding: .2em .5em .2em .5em;
+    vertical-align: top;
+    /*text-align: left;*/
+}
+
+#textA 
+{
+	/*text-align:start;*/
+}
+
+/*------------FAQ Section -------Colin---ends Here */
+
+
+
+/* -----------Search Results Start here Colin------------------------------------ */
+
+
+.search_result{
+	/*border: dashed 5px #000;*/
+	padding: .2em .5em .2em .5em;
+	vertical-align: top;
+}
+
+
+/*-------------Tag Cloud Styling here-----------------------*/
+
+.tags_container{width:300px;}
+.tags ul{padding:5px 5px;}
+.tags li{margin:0;padding:0;list-style:none;display:inline;}
+.tags li a{text-decoration:none;padding:0 2px;}
+.tags li a:hover{text-decoration:underline;} 
+
+.tag1 a{font-size:12px; color: #9c639c;}
+.tag2 a{font-size:14px; color: #cece31;}
+.tag3 a{font-size:16px; color: #9c9c9c;}
+.tag4 a{font-size:18px; color: #31ce31;}
+.tag5 a{font-size:20px; color: #6363ad;}
+.tag6 a{font-size:22px; color: #ce6300;}
+.tag7 a{font-size:24px; color: #9c3100;}
+
+#tagcloud {
+                width: 300px;
+                background:#CFE3FF;
+                color:#0066FF;
+                padding: 5px;
+                border: 3px solid #559DFF;
+                text-align:center;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+            }
+
+/*----------------Tag cloud styling ends here-------------------*/
+
+/* -----------pratiks----------------------------------- */
+.ptable{
+    padding: 10px;
+    text-align: center;
+    border: black medium solid;
+    margin: 0 auto;
+    width:80%;
+    line-height: 2.2;
+}
+/* ---------pratiks----------------------------------- */
