@@ -24,7 +24,6 @@
                     <li><a href="login.php">Login | </a></li>
                     <li><a href="register.php">Register | </a></li>
                     <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
-<!--                    <li><a href="help.php">Help</a></li>-->
                 </ul>    
             </nav>
             <div id="find-us">
@@ -39,7 +38,7 @@
                 <ul>
                     
                     <li><a href="#">Account </a></li>
-                    <li><a href="#">Hot-Deals</a></li>
+                    <li><a href="<?php echo $_SERVER['REMOTE_HOST'].'\view\postAd.php'?>">Post Ad </a></li>
                     <li><a href="contact_us.php">Contact Us</a></li>
                     <li><a href="faq.php">FAQ</a></li>
                 </ul>
