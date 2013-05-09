@@ -7,7 +7,7 @@
        <a href="faq_admin_add_article.php"><input type="button" value="Insert A New Article" /></a>     
                 <?php 
                
-                include("../db/colin_database.php");
+                include("../db/database.php");
 				
 				
 				if($_POST['aa'] ==1)
@@ -60,14 +60,7 @@
 				<?php
 				
 				
-			  //SELECT * FROM products
-              //WHERE categoryID = $category_id
-              //ORDER BY productID
-				
-//Using PDO for select statement 
-                //$query = $db -> prepare("SELECT * FROM faq WHERE category_id ='$category_id' ORDER BY faq_id");
-                //$query -> execute();
-                //$row = $query ->fetchAll();
+			  
                 echo "<table>
                       <tr>
                      
@@ -79,11 +72,10 @@
                 	foreach($row2 as $res)
 					{
                     echo "<tr>";
-                    //echo "<td class='datacell'>" . $res['faq_id']  . "</td>";
-                    //echo "<td class='datacell'>" . $res['category_title']  . "</td>";
+                    
                     echo "<td class='datacell'>" . $res['title']  . "</td>";
                     echo "<td class='datacell'>" . $res['faq_content']  . "</td>";
-                  	//echo "<td class='datacell'>" . $res['category_link']  . "</td>";
+                  	
 					
                     echo "<td class='datacell'><a href='faq_admin_update_article.php?faq_id=" . $res['faq_id'] . "'>" ."<input type='button' value='Update' name='upd' id='upd'/></a>
                         <a href='faq_admin_delete_article.php?faq_id=" . $res['faq_id'] . "'>" ."<input type='button' value='Delete' name='del' id='del' /></a></td>";

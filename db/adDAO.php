@@ -95,6 +95,8 @@ class adDAO
         return $rowCount; 
    }
     
+
+    public function displayAD($)
 }
 /*require_once 'adReceive.php';
 function insertAd($ad)
