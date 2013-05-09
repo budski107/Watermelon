@@ -19,13 +19,27 @@
                 
                 </div></a>
             </a>
+            
             <nav id="top-right-nav">
-                 <ul>
-                    <li><a href="login.php">Login | </a></li>
-                    <li><a href="register.php">Register | </a></li>
-                    <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
-                </ul>    
+                <ul>
+                <li><a href="login.php">Login | </a>
+                <?php 
+                if(isset($_SESSION['userlogin']))
+                {
+                echo "<a href='login.php'>Login | </a>";
+                }
+                else 
+                {
+                echo "<a href='logout.php'>Logout | </a>";
+                }
+                ?>
+
+                </li>
+                <li><a href="register.php">Register | </a></li>
+                <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
+                </ul> 
             </nav>
+           
             <div id="find-us">
                 <ul>
                     <li><a href="#"><img src="images/Facebook.png" alt="Team Watermelon" class="imgs" /></a></li>
