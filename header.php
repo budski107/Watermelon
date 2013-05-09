@@ -26,11 +26,11 @@
                         <?php 
                             if(isset($_SESSION['userlogin']))
                                 {
-                                echo "<a href='login.php'>Login | </a>";
+                                echo "<a href='logout.php'>Logout | </a>";
                                 }
                             else 
                                 {
-                                echo "<a href='logout.php'>Logout | </a>";
+                                echo "<a href='login.php'>Login | </a>";
                                 }
                         ?>
 
