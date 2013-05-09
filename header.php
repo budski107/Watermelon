@@ -23,7 +23,7 @@
                  <ul>
                     <li><a href="login.php">Login | </a></li>
                     <li><a href="register.php">Register | </a></li>
-                    <li><a href="wishlist.php">Wishlist[<?php echo dbClass::getwishlist();?>]</a></li>
+                    <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
 <!--                    <li><a href="help.php">Help</a></li>-->
                 </ul>    
             </nav>
