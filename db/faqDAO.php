@@ -4,7 +4,7 @@ require_once '../model/ad.php';
 
 class faqDAO
 {
-	public function GetfaqByID
+	//public function GetfaqByID
 
 
 }

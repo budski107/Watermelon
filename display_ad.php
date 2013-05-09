@@ -56,12 +56,12 @@
             <form action='sendemail.php' method='post' name='sendemail'>
             <table style='margin:0 auto;'>
             <tr>
-                <td><input type='hidden' name='ad_id' value=<?php '" . $res['ad_id'] . "' ?>/></td>
+                <td><input type='hidden' name='ad_id' value='<?php $res['ad_id'] ?>'/></td>
                 <td>&nbsp;</td>
             </tr>
 
             <tr>
-                <td><em><?php ". $res['ad_title'] ." ?></em></td>
+                <td><em><?php $res['ad_title']?></em></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -91,13 +91,13 @@
             </td>
             </tr>
             <tr>
-                <td>AD Description :&nbsp;&nbsp;&nbsp; </td><td><?php ". $res['ad_description'] ." ?></td>
+                <td>AD Description :&nbsp;&nbsp;&nbsp; </td><td><?php $res['ad_description']?></td>
             </tr>
             <tr>
-                <td><p>Price : </td><td> <?php". $res['ad_price'] ." ?></p></td>
+                <td><p>Price : </td><td> <?php $res['ad_price'] ?></p></td>
             </tr>
             <tr>
-                <td><p>Location :</td><td><?php ". $res['ad_city'] .", ". $res['province'] ." ?></p></td>
+                <td><p>Location :</td><td><?php $res['ad_city'] .", ". $res['province'] ?></p></td>
             </tr>
             <tr>
                 <td>Send Email : </td>

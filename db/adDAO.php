@@ -96,7 +96,7 @@ class adDAO
    }
     
 
-    public function displayAD($)
+    //public function displayAD($)
 }
 /*require_once 'adReceive.php';
 function insertAd($ad)
