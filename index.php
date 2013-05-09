@@ -3,6 +3,7 @@
     require_once 'model/ip2locationlite.class.php';
     require_once 'db/paidAdDAO.php';
 ?>
+<?php include'searchfeature.php'; ?>
 <div id="main">
     <div id="lbar">
      <div id="tagcloud">
