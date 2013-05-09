@@ -38,7 +38,7 @@
                 <ul>
                     
                     <li><a href="#">Account </a></li>
-                    <li><a href="<?php echo $_SERVER['REMOTE_HOST'].'\view\postAd.php'?>">Post Ad </a></li>
+                    <li><a href="<?php echo $_SERVER['REMOTE_HOST'].'watermelon\view\postAd.php'?>">Post Ad </a></li>
                     <li><a href="contact_us.php">Contact Us</a></li>
                     <li><a href="faq.php">FAQ</a></li>
                 </ul>
