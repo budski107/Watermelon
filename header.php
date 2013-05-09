@@ -22,21 +22,21 @@
             
             <nav id="top-right-nav">
                 <ul>
-                <li><a href="login.php">Login | </a>
-                <?php 
-                if(isset($_SESSION['userlogin']))
-                {
-                echo "<a href='login.php'>Login | </a>";
-                }
-                else 
-                {
-                echo "<a href='logout.php'>Logout | </a>";
-                }
-                ?>
+                    <li>
+                        <?php 
+                            if(isset($_SESSION['userlogin']))
+                                {
+                                echo "<a href='login.php'>Login | </a>";
+                                }
+                            else 
+                                {
+                                echo "<a href='logout.php'>Logout | </a>";
+                                }
+                        ?>
 
-                </li>
-                <li><a href="register.php">Register | </a></li>
-                <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
+                    </li>
+                    <li><a href="register.php">Register | </a></li>
+                    <li><a href="wishlist.php"><?php include "wishlistFeature.php"?></a></li>
                 </ul> 
             </nav>
            
