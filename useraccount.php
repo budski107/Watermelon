@@ -44,7 +44,7 @@ if(isset($_SESSION['userlogin'])){
       
             <nav id="main-nav">
                 <ul>
-                    <li><a href="#">Post Add </a></li>
+                    <li><a href="#">Post Ad</a></li>
                     <li><a href="#">Account </a></li>
                     <li><a href="#">Hot-Deals</a></li>
                     <li><a href="#">Advanced Search</a></li>
@@ -109,7 +109,7 @@ if(isset($_SESSION['userlogin'])){
     </table>
     <table class="accMenu" style="margin-left: 20px;">
         <tr>
-            <td style="cursor: pointer" onclick="window.location='view/postAd.php'">Post an Add</td>
+            <td style="cursor: pointer" onclick="window.location='view/postAd.php'">Post an Ad</td>
         </tr>
         <tr>
             <td style="cursor: pointer" onclick="window.location='view/viewAd.php'">View Your Adds</td>

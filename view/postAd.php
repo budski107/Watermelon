@@ -4,7 +4,7 @@ if(isset($_SESSION['userlogin'])){
        
   }
  else {
-    header("location:index.php");            
+    header("location:..\index.php");            
 }
 ?>
 <?php include("header.php");
