@@ -1,18 +1,19 @@
-<?php include("header.php")?>
-//<?php include_once ("dbClass.php")?>
-<?php include ("javascript.php")?>
-<?php include ("")?>
+<?php include("header.php");
+include_once ("dbClass.php");
+include ("javascript.php");
+//require_once 'db/database.php';?>
 <div id="main">
     <div id="faq">
         <?php
         //include("conn.php");
         require_once('display_adDAO.php');
 
-
+        $ad_id = $_GET['ad_id'];// added by Jay ad_id
+        $_SESSION['adid'] = $ad_id;// added by Jay to get ad_id
      
         $display_adDAOObj = new display_adDAO();
                     
-        $ad_id = $display_adDAOObj->getDisplayAd();
+        $row = $display_adDAOObj->getDisplayAd($ad_id);
             
         //commented out by colin for making class based                
         //$ad_id = $_GET['ad_id'];
@@ -56,18 +57,18 @@
             <form action='sendemail.php' method='post' name='sendemail'>
             <table style='margin:0 auto;'>
             <tr>
-                <td><input type='hidden' name='ad_id' value='<?php $res['ad_id'] ?>'/></td>
+                <td><input type='hidden' name='ad_id' value='<?php $row['ad_id'] ?>'/></td>
                 <td>&nbsp;</td>
             </tr>
 
             <tr>
-                <td><em><?php $res['ad_title']?></em></td>
+                <td><em><?php echo $row['ad_title']?></em></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>Rating :</td>
                 <td>           
-            <?php echo dbClass::drawItemRating($res['ad_id']);?>
+            <?php echo dbClass::drawItemRating($row['ad_id']);?>
             
             </td>
             </tr>
@@ -86,18 +87,18 @@
             <tr>
                 <td>Image : </td>
                 <td>
-            <img src="adimage/<?php echo $res['ad_image'];?>" width="300" height="200" />               
+            <img src="adimage/<?php echo $row['ad_image'];?>" width="300" height="200" />               
                 
             </td>
             </tr>
             <tr>
-                <td>AD Description :&nbsp;&nbsp;&nbsp; </td><td><?php $res['ad_description']?></td>
+                <td>AD Description :&nbsp;&nbsp;&nbsp; </td><td><?php echo $row['ad_description']?></td>
             </tr>
             <tr>
-                <td><p>Price : </td><td> <?php $res['ad_price'] ?></p></td>
+                <td><p>Price : </td><td> <?php echo $row['ad_price'] ?></p></td>
             </tr>
             <tr>
-                <td><p>Location :</td><td><?php $res['ad_city'] .", ". $res['province'] ?></p></td>
+                <td><p>Location :</td><td><?php echo $row['ad_city'] .", ". $row['province'] ?></p></td>
             </tr>
             <tr>
                 <td>Send Email : </td>
@@ -106,7 +107,7 @@
             <tr>
                 <td>Rating : </td>
                 <td>            
-            <?php echo dbClass::drawRatingSelection($res['ad_id']) ?>
+            <?php echo dbClass::drawRatingSelection($row['ad_id']) ?>
             
             </td>
             

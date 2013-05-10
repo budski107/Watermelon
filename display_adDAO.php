@@ -1,17 +1,14 @@
 <?php
-require_once 'model/ad.php';
-require_once 'db/database.php';
+//require_once 'model/ad.php';
+require_once 'database.php';
 
 class display_adDAO {
 
-   public function getDisplayAd($ad_id)
+   public function getDisplayAd($ad_id){
 
         $dbObj = new database();
-        $res = $dbObj->getConnection();
+        $con = $dbObj->getConnection();
 
-        $ad_id = $_GET['ad_id'];
-        $_SESSION['adid'] = $ad_id;
-      
         $sql = ("SELECT adv.ad_id, adv.ad_title, adv.ad_category_id, 
                 cat.ad_category, adv.ad_image, adv.ad_description, 
                 adv.ad_price, adv.ad_city, adv.ad_addr, 
@@ -21,9 +18,12 @@ class display_adDAO {
                     and adv.ad_category_id = cat.ad_category_id
                     and adv.ad_id=:ad_id");
         //$sql = ("SELECT * FROM tbl_advertisement WHERE ad_id=:ad_id");                
-        $query = $db->prepare($sql);
-        $query -> execute(array(':ad_id'=>$ad_id));
-        $res = $query ->fetch();    
+        $query = $con->prepare($sql);
+        $query->execute(array(':ad_id'=>$ad_id));
+        $res = $query->fetch(); 
+        
+        //echo $res['ad_title'];
+        return $res;
       }
-
+}
    ?>
