@@ -7,8 +7,6 @@ require_once 'database.php';
 class dbClass {
 		
 	private function __construct() {}
-
-        
         public static function getwishlist()
         {
             if ( isset($_SERVER["REMOTE_ADDR"]) )    {
