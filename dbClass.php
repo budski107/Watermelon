@@ -53,6 +53,7 @@ class dbClass {
 	}
         
 	
+        
         public static function drawRatingSelection($itemID) {
 								
 		for($i = 1; $i <= RATING_SCALE; $i++) {
