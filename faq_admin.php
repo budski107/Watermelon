@@ -1,10 +1,10 @@
 <?php session_start();
-if(isset($_SESSION['adminlogin'])){
+/*if(isset($_SESSION['adminlogin'])){
             
   }
  else {
     header("location:index.php");            
-}
+}*/
 ?>
 <?php include("header.php")?>
 <div id="main">
@@ -14,10 +14,19 @@ if(isset($_SESSION['adminlogin'])){
        <a href="faq_admin_add_cat.php"><input type="button" value="Insert A New Category" /></a>
        <a href="faq_admin_add_article.php"><input type="button" value="Insert A New Article" /></a>     
                 <?php 
-                include("conn.php");
+                
+                $faqArr = array();
+                if($_POST['default'] ==1)
+				{ 
+					$category_id = 1;//$_POST['catlist'];
+					$objFaqService = new faqService();
+                                        $faqArr = $objFaqService->selectFaqByCategory($category_id);
+				}
+                
+                //include("conn.php");
 				
 				
-				if($_POST['aa'] ==1)
+				/*if($_POST['default'] ==1)
 				{ 
 					$category_id = $_POST['catlist'];
 					$query = $db -> prepare("SELECT * FROM faq WHERE category_id ='$category_id' ORDER BY faq_id");
@@ -49,7 +58,7 @@ if(isset($_SESSION['adminlogin'])){
                 $query = $db -> prepare("SELECT * FROM category ORDER BY category_id");
                 $query -> execute();
                 $row = $query ->fetchAll();
-				
+				*/
 				?>
                
                 
@@ -61,42 +70,68 @@ if(isset($_SESSION['adminlogin'])){
                     </option>
                 	<?php endforeach; ?>
 					</select>
-                    <input type="hidden" name="aa" id="aa" value="1" />
+                    <input type="hidden" name="default" id="default" value="1" />
                 	<input type="submit" value="Submit" />
                 </form>
-				<?php
-				
-				
-			  //SELECT * FROM products
-              //WHERE categoryID = $category_id
-              //ORDER BY productID
-				
-//Using PDO for select statement 
-                //$query = $db -> prepare("SELECT * FROM faq WHERE category_id ='$category_id' ORDER BY faq_id");
-                //$query -> execute();
-                //$row = $query ->fetchAll();
-                echo "<table>
+       
+       
+       
+                <table>
                       <tr>
                      
                       <th class='datahead'>Article Title</th>
                       <th class='datahead'>Article Content</th>
                       
 					  <th class='datahead'>Options</th>
-                      </tr>";
-                	foreach($row2 as $res)
-					{
-                    echo "<tr>";
-                    //echo "<td class='datacell'>" . $res['faq_id']  . "</td>";
-                    //echo "<td class='datacell'>" . $res['category_title']  . "</td>";
-                    echo "<td class='datacell'>" . $res['title']  . "</td>";
-                    echo "<td class='datacell'>" . $res['faq_content']  . "</td>";
-                  	//echo "<td class='datacell'>" . $res['category_link']  . "</td>";
+                      </tr>
+                	<?php foreach($faqArr as $objFaq)
+			{
+                        ?>
+                      <tr>
+                        <td class='datacell'><?php echo $objFaq->getTitle(); ?></td>
+                        <td class='datacell'><?php echo $objFaq->getFaq_content(); ?></td>
+                  	
+                        <td class='datacell'><a href='faq_admin_update_article.php?faq_id="<?php echo $objFaq->getFaq_id(); ?>"'>
+                            <input type='button' value='Update' name='upd' id='upd'/></a>
+                            <a href='faq_admin_delete_article.php?faq_id="<?php echo $objFaq->getFaq_id();?>"'>
+                            <input type='button' value='Delete' name='del' id='del' /></a>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+				
+				
+				
+		
+<!--                <table>
+                      <tr>
+                     
+                      <th class='datahead'>Article Title</th>
+                      <th class='datahead'>Article Content</th>
+                      
+					  <th class='datahead'>Options</th>
+                      </tr>
+                      <?php
+                	//foreach($faqArr as $objFaq)
+                        //{
+                         ?>
+                            <tr>
+                                <td class='datacell'><?php// echo $objFaq->getTitle(); ?></td>
+                                <td class='datacell'><?php// echo $objFaq->getFaq_content(); ?></td>
+                  	
 					
-                    echo "<td class='datacell'><a href='faq_admin_update_article.php?faq_id=" . $res['faq_id'] . "'>" ."<input type='button' value='Update' name='upd' id='upd'/></a><a href='faq_admin_delete_article.php?faq_id=" . $res['faq_id'] . "'>" ."<input type='button' value='Delete' name='del' id='del' /></a></td>";
-                    echo "</tr>";
-					}
-                echo"</table>";
-            ?>         
+                    <td class='datacell'><a href='faq_admin_update_article.php?faq_id=" . $res['faq_id'] . "'>"
+                                            ."<input type='button' value='Update' name='upd' id='upd'/></a>
+                        <a href='faq_admin_delete_article.php?faq_id=" . $res['faq_id'] . "'>" ."
+                           <input type='button' value='Delete' name='del' id='del' /></a></td>";
+                    </tr>
+                    <?php
+			//}
+                        ?>
+                </table>-->
+                   
               	
     </div>
     

@@ -8,6 +8,15 @@ class faqService {
         $faqCategoryArr = $objFaqDAO->getFaqByCat();
         return $faqCategoryArr;
     }
+    
+    public function selectFaqByCategory($catId)
+    {
+        $objFaqDAO = new faqDAO();
+        $faqArr = $objFaqDAO->getFaqByCatId($catId);
+        return $faqArr;
+    }
+    
 }
+
 
 ?>
