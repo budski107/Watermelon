@@ -1,9 +1,7 @@
 <?php
 require_once 'database.php';
 require_once 'category.php';
-//require_once 'faqClass.php';
-require_once '../model/faqClass.php';
-
+require_once 'faqClass.php';
 class faqDAO {
         //private $categoryArr = new Array();
 	

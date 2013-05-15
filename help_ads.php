@@ -1,25 +1,42 @@
-<?php include("header.php")?>
+<?php include("header.php");
+require_once("faqService.php");
+?>
 <div id="main">
     <div id="faq" style="border:#F00 1px solid">
-    <div id="accordion">
+    
 
-  				<?php 
-                include("conn.php");
-					//Using PDO for select statement 
-                $query = $db -> prepare("SELECT * FROM faq WHERE category_id = 2");
-                $query -> execute();
-                $row = $query ->fetchALL();
+                <?php 
+                $HelpArr = array();
+                //if($_POST['default'] ==2)
+                {
+                    $category_id = 2;
+                    $objFaqService = new faqService();
+                    $HelpArr = $objFaqService->selectFaqByCategory($category_id);
+                }
+//                $faqArr = array();
+//                if($_POST['default']==2)
+//                {   
+//                    $category_id = 2;
+//                    $objFaqService = new faqService();
+//                    $faqArr = $objFaqService->selectFaqByCategory($category_id);
+//                }
+                
+                //$query = $db -> prepare("SELECT * FROM faq WHERE category_id = 2");
+                //$query -> execute();
+                //$row = $query ->fetchALL();
 				 	
-					foreach($row as $res)
-					{
-					 echo "<p>" . $res['title'] . "</p>";
-					 echo "<p>" . $res['faq_content'] . "</p>";
-					}
+			foreach($HelpArr as $objFaq)
+			{
+                        ?>
+                            <p><?php echo $objFaq->getTitle(); ?></p>
+                            <p><?php echo $objFaq->getFaq_content(); ?></p>
+                        <?php
+			}
+                        ?>
 					
 					
-					
-    				?>
-                    </div>
+    				
+                    
     </div>
     
     

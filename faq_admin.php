@@ -6,7 +6,10 @@
     header("location:index.php");            
 }*/
 ?>
-<?php include("header.php")?>
+<?php include("header.php");
+require_once("faqService.php");
+?>
+
 <div id="main">
     
     <div id="faq" style="border:black 2px solid">
@@ -45,8 +48,8 @@
 				
 				// Get all categories
     			$query = 'SELECT * FROM category
-              	ORDER BY category_id';
-    			$categories = $db->query($query);
+                        ORDER BY category_id';
+   			$categories = $db->query($query);
 				
 				// Get articles for selected category
     			$query = "SELECT * FROM faq

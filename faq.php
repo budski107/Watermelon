@@ -1,5 +1,7 @@
 <?php include("header.php");
 require_once("faqService.php");
+//require_once("service/faqService.php");
+
 ?>
 <div id="main">
     <div id="faq" style="border:#F00 1px solid">
